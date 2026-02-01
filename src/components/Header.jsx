@@ -4,16 +4,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent border-0" style={{width: '100%', height: '119px'}}>
+    <header className="bg-transparent border-0" style={{width: '100%', height: '119px'}}>
       <nav className="mx-auto flex items-center justify-center" style={{maxWidth: '1097px', height: '100%'}}>
-        <div className="flex items-center gap-8 w-full justify-center" style={{height: '100%'}}>
+        <div className="flex items-center justify-center w-full" style={{height: '100%'}}>
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <img src="/src/assets/images/logo-dark.svg" alt="Logo" className="w-32 h-auto object-contain" />
+          <div className="flex items-center pr-44">
+            <img src="/src/assets/images/logo-dark.svg" alt="Logo" className="w-44 h-auto object-contain" />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-10">
             <a href="#home" className="text-white hover:text-primary-blue transition-colors">
               Home
             </a>
@@ -29,7 +29,7 @@ const Header = () => {
           </div>
 
           {/* Login Button */}
-          <button className="hidden md:block px-6 py-2 border border-white/20 rounded hover:border-primary-blue hover:text-primary-blue transition-all ml-4">
+          <button className="hidden md:block px-6 py-2 border border-white/20 rounded hover:border-primary-blue hover:text-primary-blue transition-all ml-44">
             Login
           </button>
 

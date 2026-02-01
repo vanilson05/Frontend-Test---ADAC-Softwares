@@ -2,21 +2,6 @@ import React from 'react'
 
 const Features = () => {
   const features = [
-    {
-      icon: '💡',
-      title: 'A single source of truth',
-      description: 'When you add work to your Slate calendar we automatically calculate useful insights'
-    },
-    {
-      icon: '🎯',
-      title: 'Intuitive interface',
-      description: 'When you add work to your Slate calendar we automatically calculate useful insights'
-    },
-    {
-      icon: '📊',
-      title: 'Or with rules',
-      description: 'When you add work to your Slate calendar we automatically calculate useful insights'
-    }
   ]
 
   return (

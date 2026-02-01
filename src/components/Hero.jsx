@@ -1,12 +1,9 @@
 import React from 'react'
-import heroImage from '../assets/images/Desktop_HEADER_05.png'
+import heroImage from '../assets/images/background-hero.svg'
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 lg:py-32 overflow-hidden">
-      {/* Background gradient effects */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-blue/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-pink/20 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -33,22 +30,27 @@ const Hero = () => {
             </button>
           </div>
 
-          {/* Hero Image */}
-          <div className="pt-12 lg:pt-20">
-            <div className="relative mx-auto max-w-5xl">
-              <img
-                src={heroImage}
-                alt="Dashboard preview"
-                className="w-full h-auto transform perspective-1000 rotate-x-12"
-                style={{
-                  transform: 'perspective(1000px) rotateX(10deg)',
-                  filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5))'
-                }}
-              />
-              
-              {/* Glow effect under image */}
-              <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-3/4 h-40 bg-primary-blue/30 blur-3xl"></div>
-            </div>
+        </div>
+        {/* Hero Image separada do texto */}
+        <div className="pt-12 lg:pt-20">
+          <div className="relative mx-auto max-w-7xl">
+            <img
+              src={heroImage}
+              alt="Dashboard preview"
+              className="w-full"
+            />
+            {/* Gradiente escuro apenas sobre a imagem */}
+            <div
+              className="absolute left-1/2 bottom-0 -translate-x-1/2"
+              style={{
+                width: '100vw',
+                height: '551px',
+                background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(14,14,14,1) 100%)',
+                pointerEvents: 'none',
+                position: 'absolute',
+                zIndex: 10,
+              }}
+            />
           </div>
         </div>
       </div>
