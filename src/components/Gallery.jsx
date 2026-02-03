@@ -23,17 +23,10 @@ const Gallery = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-          } else {
-            setIsVisible(false)
-          }
+          setIsVisible(entry.isIntersecting)
         })
       },
-      {
-        threshold: 0.1,
-        rootMargin: '0px'
-      }
+      { threshold: 0.1 }
     )
 
     if (sectionRef.current) {
@@ -47,151 +40,127 @@ const Gallery = () => {
     }
   }, [])
 
-  // Desktop gallery images (7 images)
-  const desktopGallery = [
-    // Top row - 4 images (225x285 each)
-    { id: 1, src: galeria1, size: 'small' },
-    { id: 2, src: galeria2, size: 'small' },
-    { id: 3, src: galeria3, size: 'small' },
-    { id: 4, src: galeria4, size: 'small' },
-    // Bottom row - 3 images (sides: large, middle: small)
-    { id: 5, src: galeria5, size: 'large' },
-    { id: 6, src: galeria6, size: 'small' },
-    { id: 7, src: galeria7, size: 'large' },
-  ]
-
-  // Mobile gallery images (4 images)
-  const mobileGallery = [
-    { id: 1, src: mobile1 },
-    { id: 2, src: mobile2 },
-    { id: 3, src: mobile3 },
-    { id: 4, src: mobile4 },
-  ]
-
   return (
     <section ref={sectionRef} className="py-20 lg:py-32 px-4">
-      <div className="container mx-auto">
-        {/* Section Header */}
-        <div className={`text-center max-w-3xl mx-auto mb-16 transition-all duration-800 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Gallery
-          </h2>
-          <p className="text-gray-400 text-lg">
-            We focus on ergonomics and meeting you where you work.
-            It's only a keystroke away.
+      <div className="max-w-[1050px] mx-auto">
+        
+        {/* Header */}
+        <div className={`text-center mb-20 transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h2 className="text-5xl font-bold text-white mb-6">Gallery</h2>
+          <p className="text-gray-300 text-lg max-w-[600px] mx-auto">
+            We focus on ergonomics and meeting you where you work. It's only a keystroke away.
           </p>
         </div>
 
-        {/* Desktop Gallery - Hidden on mobile */}
-        <div className="hidden md:block mx-auto mb-12" style={{ maxWidth: '1087px' }}>
-          {/* Top Row - 4 images (999px total width, gap: 33px) */}
-          <div 
-            className="flex justify-center mb-8"
-            style={{ 
-              width: '999px',
-              height: '285px',
-              gap: '33px',
-              margin: '0 auto'
-            }}
-          >
-            {desktopGallery.slice(0, 4).map((item, index) => (
-              <div
-                key={item.id}
-                className={`overflow-hidden transition-all duration-1000 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                }`}
-                style={{
-                  width: '225px',
-                  height: '285px',
-                  borderRadius: '8px',
-                  transitionDelay: isVisible ? `${index * 100}ms` : '0ms'
-                }}
-              >
-                <img
-                  src={item.src}
-                  alt={`Gallery ${item.id}`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Row - 3 images (1087px total width, gap: 33px) */}
-          {/* Left: large (407px), Middle: small (225px), Right: large (407px) */}
-          <div 
-            className="flex justify-center"
-            style={{ 
-              width: '1087px',
-              height: '285px',
-              gap: '33px',
-              margin: '0 auto'
-            }}
-          >
-            {desktopGallery.slice(4).map((item, index) => {
-              // Calculate width: (1087 - 225 - 33*2) / 2 = 398px per large image
-              // But to match exactly: (1087 - 2*33) = 1021 total for images
-              // Small = 225, so (1021 - 225) / 2 = 398px for each large
-              const width = item.size === 'large' ? '398px' : '225px'
-              
-              return (
-                <div
-                  key={item.id}
-                  className={`overflow-hidden transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                  }`}
-                  style={{
-                    width: width,
-                    height: '285px',
-                    borderRadius: '8px',
-                    transitionDelay: isVisible ? `${400 + index * 100}ms` : '0ms'
-                  }}
-                >
-                  <img
-                    src={item.src}
-                    alt={`Gallery ${item.id}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Mobile Gallery - Hidden on desktop */}
-        <div className="md:hidden max-w-md mx-auto mb-12 space-y-6">
-          {mobileGallery.map((item, index) => (
-            <div
-              key={item.id}
-              className={`overflow-hidden transition-all duration-1000 ${
-                isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
-              }`}
-              style={{
-                width: '329px',
-                height: '285px',
-                borderRadius: '8px',
-                margin: '0 auto',
-                transitionDelay: isVisible ? `${index * 150}ms` : '0ms'
-              }}
-            >
-              <img
-                src={item.src}
-                alt={`Mobile Gallery ${item.id}`}
-                className="w-full h-full object-cover"
+        {/* Desktop Gallery Grid */}
+        <div className="hidden md:block mb-16">
+          
+          {/* Primeira linha - 4 imagens */}
+          <div className="flex gap-8 mb-8 justify-center">
+            <div className={`w-[225px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '0ms' }}>
+              <img 
+                src={galeria1} 
+                alt="Gallery 1"
+                className="max-w-full max-h-full rounded-2xl object-contain"
               />
             </div>
-          ))}
+            
+            <div className={`w-[225px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '100ms' }}>
+              <img 
+                src={galeria2} 
+                alt="Gallery 2"
+                className="max-w-full max-h-full rounded-2xl object-contain"
+              />
+            </div>
+            
+            <div className={`w-[225px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '200ms' }}>
+              <img 
+                src={galeria3} 
+                alt="Gallery 3"
+                className="max-w-full max-h-full rounded-2xl object-contain"
+              />
+            </div>
+            
+            <div className={`w-[225px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '300ms' }}>
+              <img 
+                src={galeria4} 
+                alt="Gallery 4"
+                className="max-w-full max-h-full rounded-2xl object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Segunda linha - 3 imagens (larga, pequena, larga) */}
+          <div className="flex gap-8 justify-center">
+            <div className={`w-[398px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '400ms' }}>
+              <img 
+                src={galeria5} 
+                alt="Gallery 5"
+                className="max-w-full max-h-full rounded-2xl object-contain"
+              />
+            </div>
+            
+            <div className={`w-[225px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '500ms' }}>
+              <img 
+                src={galeria6} 
+                alt="Gallery 6"
+                className="max-w-full max-h-full rounded-2xl object-contain"
+              />
+            </div>
+            
+            <div className={`w-[398px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '600ms' }}>
+              <img 
+                src={galeria7} 
+                alt="Gallery 7"
+                className="max-w-full max-h-full rounded-2xl object-contain"
+              />
+            </div>
+          </div>
+
         </div>
 
-        {/* See More Button */}
-        <div className={`text-center transition-all duration-800 delay-700 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <button className="px-8 py-3 border border-white/20 hover:border-primary-blue hover:text-primary-blue rounded transition-all duration-300 hover:transform hover:scale-105">
-            See More
+        {/* Mobile Gallery */}
+        <div className="md:hidden flex flex-col gap-6 mb-16 items-center">
+          <div className={`w-full max-w-[329px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`} style={{ transitionDelay: '0ms' }}>
+            <img 
+              src={mobile1} 
+              alt="Mobile 1"
+              className="max-w-full max-h-full rounded-2xl object-contain"
+            />
+          </div>
+          
+          <div className={`w-full max-w-[329px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`} style={{ transitionDelay: '150ms' }}>
+            <img 
+              src={mobile2} 
+              alt="Mobile 2"
+              className="max-w-full max-h-full rounded-2xl object-contain"
+            />
+          </div>
+          
+          <div className={`w-full max-w-[329px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`} style={{ transitionDelay: '300ms' }}>
+            <img 
+              src={mobile3} 
+              alt="Mobile 3"
+              className="max-w-full max-h-full rounded-2xl object-contain"
+            />
+          </div>
+          
+          <div className={`w-full max-w-[329px] h-[285px] flex items-center justify-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`} style={{ transitionDelay: '450ms' }}>
+            <img 
+              src={mobile4} 
+              alt="Mobile 4"
+              className="max-w-full max-h-full rounded-2xl object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Button See More */}
+        <div className={`text-center transition-all duration-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '700ms' }}>
+          <button className="px-10 py-4 border-2 border-white/30 text-white rounded-lg hover:border-[#2DC071] hover:text-[#2DC071] transition-all duration-300 text-base font-semibold">
+            See more
           </button>
         </div>
+
       </div>
     </section>
   )
