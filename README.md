@@ -8,7 +8,7 @@ Este projeto é uma landing page moderna desenvolvida com React e Tailwind CSS, 
 
 ## 🎨 Design
 
-O design original está disponível no Figma: [Startup Landing Page Dark](https://www.figma.com/community/file/1343864899991106390/start-up-landing-page-dark-mode)
+O design original está disponível no Figma: [Startup Landing Page Dark]
 
 ## ✨ Funcionalidades
 
@@ -119,134 +119,7 @@ npm run preview
 yarn preview
 ```
 
-## 🎯 Componentes Principais
-
-### Header
-- Navegação responsiva
-- Menu mobile com hamburger
-- Logo com gradiente
-- Botão de login
-
-### Hero
-- Título principal impactante
-- Subtítulo descritivo
-- Botões de CTA (Try For Free / Learn More)
-- Imagem de dashboard em perspectiva
-- Efeitos de gradiente de fundo
-
-### Features
-- Grid de 3 funcionalidades
-- Cards com hover effects
-- Lista de features com ícones
-- Preview de dashboard
-
-### Contents
-- Cards de conteúdo com imagens
-- Design responsivo
-- Botões de ação
-
-### Gallery
-- Grid de imagens responsivo
-- Efeitos de hover
-- Botão "See More"
-
-### Partners
-- Logo de parceiros
-- Grid responsivo
-- Ícones personalizados
-
-### Testimonials
-- Cards de depoimentos
-- Avaliações com estrelas
-- Informações dos autores
-
-### CTA
-- Seção de call-to-action
-- Preview de funcionalidade
-- Design em duas colunas
-
-### Footer
-- Links organizados por categoria
-- Informações de contato
-- Redes sociais
-- Design responsivo
-
-## 🎨 Customização
-
-### Cores
-
-As cores principais estão definidas no `tailwind.config.js`:
-
-```javascript
-colors: {
-  primary: {
-    blue: '#5454D4',
-    pink: '#FF64AE',
-    yellow: '#FFD700',
-  },
-  dark: {
-    900: '#000000',
-    800: '#1A1A1A',
-    700: '#2D2D2D',
-  }
-}
-```
-
-### Fontes
-
-O projeto utiliza a fonte Inter do Google Fonts, importada no `index.html`.
-
-## 📱 Responsividade
-
-O projeto é totalmente responsivo com breakpoints:
-- Mobile: < 768px
-- Tablet: 768px - 1023px
-- Desktop: ≥ 1024px
-
-## 🚀 Deploy
-
-O projeto pode ser facilmente deployado em:
-
-### Vercel
-```bash
-npm install -g vercel
-vercel
-```
-
-### Netlify
-```bash
-npm run build
-# Arraste a pasta dist/ para Netlify
-```
-
 ### GitHub Pages
 1. Configure o `vite.config.js` com o base path
 2. Execute `npm run build`
 3. Faça push da pasta `dist/` para branch `gh-pages`
-
-## 📝 Critérios de Avaliação Atendidos
-
-- ✅ **Fidelidade ao Design (35%)**: Interface fiel ao Figma com atenção aos detalhes
-- ✅ **Qualidade do Código (30%)**: Código limpo, organizado e com boas práticas
-- ✅ **Responsividade (20%)**: Funciona perfeitamente em todos os dispositivos
-- ✅ **Documentação (15%)**: README completo e bem estruturado
-
-## 🎯 Diferenciais Implementados
-
-- ✨ Animações e transições suaves em todos os componentes
-- 🎨 Utilização completa do Tailwind CSS para estilização
-- 📦 Componentes reutilizáveis e bem organizados
-- 🚀 Performance otimizada com Vite
-- 🎭 Efeitos visuais modernos (gradientes, blur, shadows)
-- 📱 Menu mobile totalmente funcional
-- ♿ Código semântico e acessível
-
-## 🤝 Contato
-
-Desenvolvido como teste técnico para ADAC Softwares.
-
----
-
-**Tecnologias**: React • Vite • Tailwind CSS • JavaScript
-
-**Status**: ✅ Completo e pronto para deploy
