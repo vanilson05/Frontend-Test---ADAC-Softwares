@@ -1,125 +1,272 @@
 # Frontend Test - ADAC Softwares
 
-🚀 Landing page desenvolvida como teste técnico para vaga de frontend na ADAC Softwares.
 
-## 📋 Sobre o Projeto
+Landing page responsiva desenvolvida em React com Tailwind CSS, baseada no design do Figma fornecido.
 
-Este projeto é uma landing page moderna desenvolvida com React e Tailwind CSS, baseada no design fornecido no Figma. A página apresenta uma interface profissional e responsiva com animações suaves e design moderno.
+🌐 **[Ver projeto ao vivo](https://adac-softwares.netlify.app)**
 
-## 🎨 Design
 
-O design original está disponível no Figma: [Startup Landing Page Dark]
+
+## 🚀 Tecnologias
+
+- **React 18.2** - Biblioteca JavaScript para interfaces
+- **Vite 5.0** - Build tool e dev server
+- **Tailwind CSS 3.4** - Framework CSS utility-first
+- **JavaScript (ES6+)** - Linguagem de programação
+
+
+
+## 📦 Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/Frontend-Test-ADAC-Softwares.git
+
+# Entre na pasta do projeto
+cd Frontend-Test-ADAC-Softwares
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+```text
+
+O projeto estará disponível em `http://localhost:5173`
+
+
+
+## 🏗️ Estrutura do Projeto
+
+```text
+
+
+src/
+├── assets/
+│   └── images/          # Imagens e ícones SVG
+├── components/          # Componentes React
+│   ├── Header.jsx       # Navegação e menu hambúrguer
+│   ├── Hero.jsx         # Banner principal com animações
+│   ├── Features.jsx     # Cards de funcionalidades
+│   ├── Contents.jsx     # Seção de conteúdo
+│   ├── Gallery.jsx      # Galeria de imagens
+│   ├── Partners.jsx     # Logos dos parceiros
+│   ├── Testimonials.jsx # Depoimentos (typewriter effect)
+│   ├── CTA.jsx          # Call to Action
+│   └── Footer.jsx       # Rodapé com links
+├── pages/
+│   └── Home.jsx         # Página principal
+├── App.jsx              # Componente raiz
+└── main.jsx             # Entry point
+```
+
+
 
 ## ✨ Funcionalidades
 
-- 🎯 Design moderno e profissional
-- 📱 Totalmente responsivo (mobile, tablet e desktop)
-- 🌙 Tema dark com gradientes vibrantes
-- ✨ Animações e transições suaves
-- 🎨 Componentes reutilizáveis
-- ⚡ Performance otimizada com Vite
-- 🎭 Efeitos visuais com Tailwind CSS
+### Responsividade
 
-## 🛠️ Tecnologias Utilizadas
+- **Mobile First**: Layout otimizado para dispositivos móveis
+- **Breakpoints**: Adaptação para mobile, tablet e desktop
+- **Menu Hambúrguer**: Navegação mobile com animação
 
-- **React 18.2.0** - Biblioteca JavaScript para construção de interfaces
-- **Vite 5.0.8** - Build tool moderna e rápida
-- **Tailwind CSS 3.4.0** - Framework CSS utilitário
-- **PostCSS** - Processador CSS
-- **Autoprefixer** - Plugin para adicionar prefixos CSS automaticamente
+### Animações
 
-## 📦 Estrutura do Projeto
+- **Scroll Animations**: Elementos aparecem ao rolar a página (IntersectionObserver)
+- **Typewriter Effect**: Nomes digitam automaticamente (Testimonials)
+- **Hover Effects**: Transições suaves em botões e links
+- **Sequential Delays**: Animações em cascata para melhor experiência
 
+
+
+### Componentes Principais
+
+-### Header
+
+- Menu hambúrguer animado (mobile)
+- Navegação fixa com efeito de scroll
+- Logo e botão de login
+
+-### Hero
+
+- Título e subtítulo com animações de entrada
+- Dois CTAs principais
+- Imagem responsiva com gradiente
+
+-### Features
+
+- Cards com ícones e descrições
+- Animações de fade-in ao scroll
+- Layout em grid responsivo
+
+-### Gallery
+
+- Grid de imagens com tamanhos variados
+- 7 imagens desktop (2 linhas)
+- 4 imagens mobile (stack vertical)
+- Border-radius e animações
+
+-### Partners
+
+- 6 logos de parceiros
+- Animação sequencial de destaque
+- Layout horizontal (desktop) e 2x3 (mobile)
+
+-### Testimonials
+
+- 4 depoimentos em grid 2x2
+- Efeito de máquina de escrever nos nomes
+- Cards com bordas arredondadas
+
+-### CTA
+
+- Banner com texto e imagem
+- Botão de conversão
+- Gradiente suave
+
+-### Footer
+
+- 4 colunas de links
+- Informações de contato
+- Ícones de redes sociais
+
+
+
+## 🎨 Design System
+
+### Cores
+
+```css
+--primary-blue: #5454D4
+--dark-900: #000000
+--dark-800: #1A1A1A
+--dark-700: #2D2D2D
 ```
-Frontend-Test-ADAC-Softwares/
-│
-├── index.html                 # HTML principal
-├── package.json              # Dependências e scripts
-├── vite.config.js           # Configuração do Vite
-├── tailwind.config.js       # Configuração do Tailwind
-├── postcss.config.js        # Configuração do PostCSS
-├── README.md                # Documentação
-│
-├── public/                  # Arquivos públicos estáticos
-│   └── favicon.svg
-│
-└── src/
-    ├── assets/              # Recursos (imagens, ícones)
-    │   ├── images/
-    │   └── icons/
-    │
-    ├── components/          # Componentes React
-    │   ├── Header.jsx      # Navegação e logo
-    │   ├── Hero.jsx        # Seção hero principal
-    │   ├── Features.jsx    # Seção de funcionalidades
-    │   ├── Contents.jsx    # Seção de conteúdo
-    │   ├── Gallery.jsx     # Galeria de imagens
-    │   ├── Partners.jsx    # Parceiros
-    │   ├── Testimonials.jsx # Depoimentos
-    │   ├── CTA.jsx         # Call to action
-    │   └── Footer.jsx      # Rodapé
-    │
-    ├── pages/
-    │   └── Home.jsx        # Página principal
-    │
-    ├── App.jsx             # Componente raiz
-    ├── main.jsx            # Ponto de entrada
-    └── index.css           # Estilos globais
-```
 
-## 🚀 Como Executar
+### Tipografia
 
-### Pré-requisitos
+- **Font Family**: Inter (fallback: system-ui)
+- **Headings**: Bold, tamanhos responsivos
+- **Body**: Regular, 16-18px
 
-- Node.js (versão 16 ou superior)
-- npm ou yarn
+### Espaçamentos
 
-### Instalação
+- **Sections**: py-20 lg:py-32
+- **Gaps**: 24px, 33px (conforme design)
 
-1. Clone o repositório:
+
+
+## 🖼️ Observações sobre Imagens
+
+As imagens utilizadas no projeto foram extraídas diretamente do design do Figma para garantir máxima fidelidade visual. Optei por manter as imagens originais do design para:
+
+- ✅ Preservar a identidade visual proposta
+- ✅ Garantir qualidade e resolução adequadas
+- ✅ Manter consistência com o mockup original
+- ✅ Evitar substituições que pudessem comprometer o design
+
+Todas as imagens estão em formato SVG quando possível, garantindo escalabilidade e performance.
+
+
+
+## 📱 Responsividade
+
+### Mobile (< 768px)
+
+- Menu hambúrguer
+- Stack vertical
+- Imagens adaptadas
+- Padding reduzido
+
+### Desktop (≥ 768px)
+
+- Menu horizontal
+- Grid layouts
+- Imagens maiores
+- Espaçamentos amplos
+
+
+
+## 🔧 Scripts Disponíveis
+
 ```bash
-git clone https://github.com/seu-usuario/Frontend-Test-ADAC-Softwares.git
-cd Frontend-Test-ADAC-Softwares
+npm run dev        # Inicia servidor de desenvolvimento
+npm run build      # Gera build de produção
+npm run preview    # Preview da build
+npm run lint       # Executa linter
 ```
 
-2. Instale as dependências:
+## 📂 Build
+
 ```bash
-npm install
-# ou
-yarn install
+# Gerar build de produção
+npm run build
+
+# Os arquivos estarão em /dist
 ```
 
-3. Execute o projeto em modo de desenvolvimento:
-```bash
-npm run dev
-# ou
-yarn dev
-```
+## 🌐 Deploy
 
-4. Acesse no navegador:
-```
-http://localhost:5173
-```
+O projeto está hospedado no Netlify:
 
-### Build para Produção
+🔗 **[https://adac-softwares.netlify.app](https://adac-softwares.netlify.app)**
+
+### Como fazer deploy
+
+**Netlify:**
 
 ```bash
 npm run build
-# ou
-yarn build
+# Arraste a pasta dist para o Netlify
 ```
 
-Os arquivos otimizados serão gerados na pasta `dist/`.
-
-### Preview da Build
+**Vercel:**
 
 ```bash
-npm run preview
-# ou
-yarn preview
+vercel --prod
 ```
 
-### GitHub Pages
-1. Configure o `vite.config.js` com o base path
-2. Execute `npm run build`
-3. Faça push da pasta `dist/` para branch `gh-pages`
+**GitHub Pages:**
+
+```bash
+npm run build
+# Configure gh-pages
+```
+
+
+
+## 🎯 Diferenciais Implementados
+
+✅ Animações e transições suaves (scroll, hover, typewriter)  
+✅ Tailwind CSS para estilização  
+✅ Componentes modulares e reutilizáveis  
+✅ IntersectionObserver para performance  
+✅ Menu hambúrguer animado  
+✅ Layout pixel-perfect conforme Figma  
+✅ **Deploy em produção (Netlify)**  
+
+## 📖 Documentação Adicional
+
+### Estrutura de Componentes
+
+Todos os componentes seguem o padrão:
+
+1. Imports
+2. Estados (useState)
+3. Efeitos (useEffect)
+4. Render (JSX)
+
+### Boas Práticas
+
+- Código limpo e comentado
+- Nomes descritivos de variáveis
+- Componentes pequenos e focados
+- Separação de responsabilidades
+
+## 👤 Autor
+
+Desenvolvido como teste técnico para ADAC Softwares
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins de avaliação técnica.
