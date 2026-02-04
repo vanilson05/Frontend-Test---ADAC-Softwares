@@ -2,108 +2,230 @@ import React from 'react'
 
 const Footer = () => {
   const footerLinks = {
-    fingertip: ['Home', 'Examples', 'Pricing', 'Updates'],
-    resources: ['Home', 'Examples', 'Pricing', 'Updates'],
-    about: ['Home', 'Examples', 'Pricing', 'Updates']
+    fingertipe: [
+      { name: 'Home', href: '#' },
+      { name: 'Examples', href: '#' },
+      { name: 'Pricing', href: '#' },
+      { name: 'Updates', href: '#' }
+    ],
+    resources: [
+      { name: 'Home', href: '#' },
+      { name: 'Examples', href: '#' },
+      { name: 'Pricing', href: '#' },
+      { name: 'Updates', href: '#' }
+    ],
+    about: [
+      { name: 'Home', href: '#' },
+      { name: 'Examples', href: '#' },
+      { name: 'Pricing', href: '#' },
+      { name: 'Updates', href: '#' }
+    ]
   }
 
   return (
-    <footer className="bg-dark-800/50 border-t border-white/5 py-16 px-4">
+    <footer className="bg-dark-900 py-16 px-4">
       <div className="container mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {/* Company Info */}
+        
+        {/* Desktop Layout - 4 colunas horizontais */}
+        <div className="hidden md:grid grid-cols-4 gap-12 max-w-6xl mx-auto">
+          
+          {/* Coluna 1 - Fingertipe */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary-blue to-primary-pink rounded-lg"></div>
-              <span className="text-xl font-bold">
-                <span className="gradient-text">FIGMA</span> LAND
-              </span>
-            </div>
-          </div>
-
-          {/* Fingertip Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Fingertip</h3>
-            <ul className="space-y-2">
-              {footerLinks.fingertip.map((link, index) => (
+            <h3 className="text-xl font-semibold mb-6">Fingertipe</h3>
+            <ul className="space-y-4">
+              {footerLinks.fingertipe.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-primary-blue transition-colors">
-                    {link}
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Resources Links */}
+          {/* Coluna 2 - Resources */}
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-semibold mb-6">Resources</h3>
+            <ul className="space-y-4">
               {footerLinks.resources.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-primary-blue transition-colors">
-                    {link}
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* About Links */}
+          {/* Coluna 3 - About */}
           <div>
-            <h3 className="font-semibold mb-4">About</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xl font-semibold mb-6">About</h3>
+            <ul className="space-y-4">
               {footerLinks.about.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-primary-blue transition-colors">
-                    {link}
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
 
-        {/* Bottom Section */}
-        <div className="pt-8 border-t border-white/5">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Location */}
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          {/* Coluna 4 - Contato e Social */}
+          <div>
+            {/* Endereço */}
+            <div className="flex items-start gap-3 mb-6">
+              <svg className="w-6 h-6 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              <span>7480 Mockingbird Hill undefined</span>
+              <p className="text-gray-400">7480 Mockingbird Hill undefined</p>
             </div>
 
-            {/* Contact */}
-            <div className="flex items-center gap-2 text-gray-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            {/* Telefone */}
+            <div className="flex items-center gap-3 mb-8">
+              <svg className="w-6 h-6 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
               </svg>
-              <span>(239) 555-0108</span>
+              <p className="text-gray-400">(239) 555-0108</p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex items-center gap-4">
-              <a href="#" className="text-gray-400 hover:text-primary-blue transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            {/* Social Icons */}
+            <div className="flex gap-6">
+              {/* Twitter */}
+              <a href="#" className="text-white hover:text-primary-blue transition-colors duration-300">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-blue transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+
+              {/* Facebook */}
+              <a href="#" className="text-white hover:text-primary-blue transition-colors duration-300">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-blue transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+
+              {/* LinkedIn */}
+              <a href="#" className="text-white hover:text-primary-blue transition-colors duration-300">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
                 </svg>
               </a>
             </div>
           </div>
+
         </div>
+
+        {/* Mobile Layout - Colunas verticais */}
+        <div className="md:hidden space-y-12">
+          
+          {/* Fingertipe */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Fingertipe</h3>
+            <ul className="space-y-4">
+              {footerLinks.fingertipe.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6">Resources</h3>
+            <ul className="space-y-4">
+              {footerLinks.resources.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* About */}
+          <div>
+            <h3 className="text-xl font-semibold mb-6">About</h3>
+            <ul className="space-y-4">
+              {footerLinks.about.map((link, index) => (
+                <li key={index}>
+                  <a 
+                    href={link.href} 
+                    className="text-gray-400 hover:text-white transition-colors duration-300"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contato e Social */}
+          <div>
+            {/* Endereço */}
+            <div className="flex items-start gap-3 mb-6">
+              <svg className="w-6 h-6 text-white flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <p className="text-gray-400">7480 Mockingbird Hill undefined</p>
+            </div>
+
+            {/* Telefone */}
+            <div className="flex items-center gap-3 mb-8">
+              <svg className="w-6 h-6 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+              </svg>
+              <p className="text-gray-400">(239) 555-0108</p>
+            </div>
+
+            {/* Social Icons */}
+            <div className="flex gap-6">
+              {/* Twitter */}
+              <a href="#" className="text-white hover:text-primary-blue transition-colors duration-300">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                </svg>
+              </a>
+
+              {/* Facebook */}
+              <a href="#" className="text-white hover:text-primary-blue transition-colors duration-300">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+              </a>
+
+              {/* LinkedIn */}
+              <a href="#" className="text-white hover:text-primary-blue transition-colors duration-300">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </footer>
   )
